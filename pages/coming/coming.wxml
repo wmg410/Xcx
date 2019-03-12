@@ -1,0 +1,26 @@
+<!-- <import src="../../component/filmList/filmList.wxml"/>
+<template is="filmList" data="{{films: films, hasMore: hasMore, showLoading: showLoading}}"/>
+<import src="../../component/message/message.wxml"/>
+<template is="message" data="{{message: message}}"/> -->
+
+<view class='container'>
+  <view class='nav_tab'>
+    <view class="{{selected?'red':'default'}}" bindtap="selected">购买会员卡</view>
+    <view class="{{selected1?'red':'default'}}" bindtap="selected1">我的会员卡</view>
+  </view>
+  <view class="{{selected?'show':'hidden'}}">
+    <swiper class="imageContainer" bindchange="handleChange" previous-margin="50rpx" next-margin="50rpx" circular autoplay>
+      <block wx:for="{{bannerList}}" wx:for-item="bannerItem" wx:for-index="bannerIndex" wx:key="{{index}}">
+        <swiper-item class="item" data-type="{{bannerItem.type}}" data-id="{{bannerItem.id}}">
+          <image class="itemImg {{currentIndex == index ? 'active': ''}}" src="{{bannerItem.imgUrl}}"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+     
+    <view class='content'>
+      <view class='title_left'>电竞</view>
+      <view class='title_right'>查看更多</view>
+    </view>
+  </view>
+  <view class="{{selected1?'show':'hidden'}}">会员卡会员卡会员卡</view>
+</view>

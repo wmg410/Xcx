@@ -1,0 +1,29 @@
+/* @import "../../component/filmList/filmList.wxss"; */
+/* @import "../../component/message/message.wxss"; */
+
+.message{
+  width: 100%;
+  height: 350rpx;
+  /* background-color: #eeeeee; */
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+}
+
+.message-left{
+  width: 50%;
+  height: 350rpx;
+  
+}
+
+.message-left view{
+ display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  margin: 0 auto;
+}
+
+.location-map{
+  width: 50%;
+  height: 350rpx;
+}

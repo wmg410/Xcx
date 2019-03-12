@@ -1,0 +1,24 @@
+<view class="container">
+    <view class="user-info" style="background-image: url({{skin}})">
+        <view class="user-skin" bindtap="viewSkin"></view>
+        <image src="{{userInfo.avatarUrl}}" class="user-avatar"></image>
+        <view>
+            <button class='button' wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 
+                登录 
+            </button>
+            <block wx:else>
+                <!-- <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image> -->
+                <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+            </block>
+        </view>
+        <view class="user-location">{{userInfo.province}},{{userInfo.city}}</view>
+    </view>
+    <view class="grids">
+        <block wx:for="{{gridList}}" wx:for-item="gridItem" wx:for-index="gridIndex" wx:key="grid">
+            <view class="grid" bindtap="viewGridDetail" data-url="{{gridItem.enName}}">
+                <view class="grid-icon grid-icon-{{gridItem.enName}}"></view>
+                <view class="grid-title">{{gridItem.zhName}}</view>
+            </view>
+        </block>
+    </view>
+</view>

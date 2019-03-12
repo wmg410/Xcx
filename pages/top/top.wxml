@@ -1,0 +1,20 @@
+<!-- <import src="../../component/filmList/filmList.wxml"/>
+<template is="filmList" data="{{films: films, hasMore: hasMore, showLoading: showLoading}}"/>
+<import src="../../component/message/message.wxml"/>
+<template is="message" data="{{message: message}}"/> -->
+
+<view class='container'>
+  <view class='content'>
+    <view class='message' wx:for="{{items}}" wx:for-item="item" wx:key="items.viewid">
+      <block class='message-left'>
+        <navigator url="../popular/popular?index={{item.viewide}}">
+          <view>{{item.message}}</view>
+        </navigator>
+      </block>
+      <block class='message-right'>
+        <map longitude="{{longitude}}" latitude="{{latitude}}" class="location-map" markers="{{markers}}" covers="{{covers}}"></map>
+      </block>
+    </view>
+  </view>
+  
+</view>
